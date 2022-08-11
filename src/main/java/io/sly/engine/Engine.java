@@ -3,11 +3,7 @@ package io.sly.engine;
 import java.io.File;
 import java.util.HashMap;
 
-import org.newdawn.slick.Game;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.SlickException;
+import com.badlogic.gdx.Input;
 
 import io.sly.game.State;
 import io.sly.game.states.*;
@@ -15,7 +11,9 @@ import io.sly.graphics.Display;
 import io.sly.input.Mouse;
 import io.sly.util.ResourceLoader;
 
-public class Engine implements Game {
+import helix.game.BaseGame;
+
+public class Engine extends BaseGame {
 	public static final ResourceLoader RES = new ResourceLoader();
 	
 	private static State currentState;
@@ -37,6 +35,12 @@ public class Engine implements Game {
 		Engine.TITLE = TITLE;
 
 		new Display(this, WIDTH, HEIGHT);
+	}
+	
+	@Override
+	protected void start() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public void init(GameContainer gc) throws SlickException {
@@ -186,4 +190,5 @@ public class Engine implements Game {
 		RES.loadMap("Mountain Pass", "mountainpass.map");
 		RES.loadMap("Grass", "grass.map");
 	}
+
 }
