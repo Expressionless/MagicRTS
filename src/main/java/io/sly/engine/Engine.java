@@ -28,7 +28,7 @@ public class Engine extends BaseGame {
 	
 	public static final HashMap<String, State> STATES = new HashMap<String, State>();
 
-	public Engine(int WIDTH, int HEIGHT, String TITLE) {
+	public Engine(String title, int frameWidth, int frameHeight) {
 		System.out.println("Initializing Engine..");
 		Engine.WIDTH = WIDTH;
 		Engine.HEIGHT = HEIGHT;
